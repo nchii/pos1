@@ -36,7 +36,7 @@ if (isset($_GET['deleteId'])) {
             <?php $categories = get_category($mysqli,$currentPage); ?>
 <?php
                 if (isset($_POST["search"]) && $_POST['search'] != '') {
-                    $users = get_category_filter($mysqli, $_POST['search']);
+                    $categories = get_category_filter($mysqli, $_POST['search']);
                 } ?>
               <?php
               if (isset($_POST["search"])) {

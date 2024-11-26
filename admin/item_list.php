@@ -36,9 +36,10 @@ if (isset($_GET['deleteId'])) {
             </thead>
             <tbody>
             <?php $item_list=get_all_item_join($mysqli,$currentPage) ; ?>
-<?php
+                <?php
                 if (isset($_POST["search"]) && $_POST['search'] != '') {
-                    $users = get_item_filter($mysqli, $_POST['search']);
+                    $item_list = get_item_filter($mysqli, $_POST['search']);
+                    
                 } ?>
               <?php
               if (isset($_POST["search"])) {

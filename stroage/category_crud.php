@@ -25,7 +25,8 @@ function get_category($mysqli, $currentPage)
 
 function get_category_filter($mysqli, $key)
 {
-    $sql = "SELECT * FROM `cateory` WHERE `categoryName` LIKE '%$key%'";
+    $sql = "SELECT * FROM `category` 
+    WHERE `categoryName` LIKE '%$key%'";
     return $mysqli->query($sql);
 }
 

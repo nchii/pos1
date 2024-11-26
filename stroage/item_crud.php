@@ -20,7 +20,9 @@ function get_item_pag_count($mysqli)
 
 function get_item_filter($mysqli, $key)
 {
-    $sql = "SELECT * FROM `cateory` WHERE `itemName` LIKE '%$key%'";
+    $sql = "SELECT t1.*,t2.categoryName
+  FROM `item` t1 INNER JOIN `category` t2 ON t1.category_id=t2.id 
+  WHERE t1.name LIKE '%$key%'";
     return $mysqli->query($sql);
 }
 
